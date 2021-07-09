@@ -14,19 +14,19 @@ public class Game {
         this.idGame = idGame;
     }
 
-    public int getNumberPlayers() {
+    public int getNumberOfPlayers() {
         return numberOfPlayers;
     }
 
-    public void setNumberPlayers(int numberPlayers) {
-        this.numberOfPlayers = numberPlayers;
+    public void setNumberOfPlayers(int numberOfPlayers) {
+        this.numberOfPlayers = numberOfPlayers;
     }
 
-    public int getDistance() {
+    public int getDistanceKM() {
         return distanceKM;
     }
 
-    public void setDistance(int distanceKM) {
+    public void setDistanceKM(int distanceKM) {
         this.distanceKM = distanceKM;
     }
 }

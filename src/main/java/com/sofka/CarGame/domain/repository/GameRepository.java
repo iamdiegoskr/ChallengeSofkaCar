@@ -7,8 +7,6 @@ import java.util.Optional;
 
 public interface GameRepository {
 
-    //Todo en terminos del dominio.
-
     List<Game> getAll();
     Optional<Game> getGameById(int id);
     Game save(Game game);

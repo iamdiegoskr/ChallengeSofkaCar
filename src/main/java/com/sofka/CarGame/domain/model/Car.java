@@ -7,7 +7,6 @@ public class Car {
     private String brand;
     private int idDriver;
     private Driver driver;
-    private Lane lane;
 
     public int getIdCar() {
         return idCar;
@@ -57,11 +56,4 @@ public class Car {
         this.driver = driver;
     }
 
-    public Lane getLane() {
-        return lane;
-    }
-
-    public void setLane(Lane lane) {
-        this.lane = lane;
-    }
 }
