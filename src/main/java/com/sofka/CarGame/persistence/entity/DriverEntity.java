@@ -12,6 +12,9 @@ public class DriverEntity {
 
     private String nameDriver;
 
+    @OneToOne(mappedBy = "driver")
+    private CarEntity car;
+
 
     public Integer getIdDriver() {
         return idDriver;
@@ -29,4 +32,12 @@ public class DriverEntity {
         this.nameDriver = nameDriver;
     }
 
+
+    public CarEntity getCar() {
+        return car;
+    }
+
+    public void setCar(CarEntity car) {
+        this.car = car;
+    }
 }

@@ -12,11 +12,18 @@ public class PodiumEntity {
 
     private Integer idGame;
 
-    private Integer firstPlace;
+    @OneToOne
+    private DriverEntity firstPlace;
 
-    private Integer secondPlace;
+    @OneToOne
+    private DriverEntity secondPlace;
 
-    private Integer thirdPlace;
+    @OneToOne
+    private DriverEntity thirdPlace;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idGame", referencedColumnName = "idGame")
+    private GameEntity game;
 
 
     public Integer getIdPodium() {
@@ -35,27 +42,35 @@ public class PodiumEntity {
         this.idGame = idGame;
     }
 
-    public Integer getFirstPlace() {
+    public DriverEntity getFirstPlace() {
         return firstPlace;
     }
 
-    public void setFirstPlace(Integer firstPlace) {
+    public void setFirstPlace(DriverEntity firstPlace) {
         this.firstPlace = firstPlace;
     }
 
-    public Integer getSecondPlace() {
+    public DriverEntity getSecondPlace() {
         return secondPlace;
     }
 
-    public void setSecondPlace(Integer secondPlace) {
+    public void setSecondPlace(DriverEntity secondPlace) {
         this.secondPlace = secondPlace;
     }
 
-    public Integer getThirdPlace() {
+    public DriverEntity getThirdPlace() {
         return thirdPlace;
     }
 
-    public void setThirdPlace(Integer thirdPlace) {
+    public void setThirdPlace(DriverEntity thirdPlace) {
         this.thirdPlace = thirdPlace;
+    }
+
+    public GameEntity getGame() {
+        return game;
+    }
+
+    public void setGame(GameEntity game) {
+        this.game = game;
     }
 }

@@ -1,6 +1,7 @@
 package com.sofka.CarGame.persistence.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "track")
@@ -12,8 +13,11 @@ public class TrackEntity {
 
     private String nameTrack;
 
-    private Integer idLane;
+    private Integer limitTrack;
 
+    @OneToMany(mappedBy = "track") //Una pista puede tener muchos carriles
+    private List<LaneEntity> lanes;
+    
 
     public Integer getIdTrack() {
         return idTrack;
@@ -31,11 +35,19 @@ public class TrackEntity {
         this.nameTrack = nameTrack;
     }
 
-    public Integer getIdLane() {
-        return idLane;
+    public Integer getLimitTrack() {
+        return limitTrack;
     }
 
-    public void setIdLane(Integer idLane) {
-        this.idLane = idLane;
+    public void setLimitTrack(Integer limitTrack) {
+        this.limitTrack = limitTrack;
+    }
+
+    public List<LaneEntity> getLanes() {
+        return lanes;
+    }
+
+    public void setLanes(List<LaneEntity> lanes) {
+        this.lanes = lanes;
     }
 }

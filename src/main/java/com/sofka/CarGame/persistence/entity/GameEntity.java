@@ -14,6 +14,11 @@ public class GameEntity {
 
     private Integer distance;
 
+    @OneToOne(mappedBy = "game")
+    private PodiumEntity podium;
+
+
+
     public Integer getIdGame() {
         return idGame;
     }
@@ -36,5 +41,13 @@ public class GameEntity {
 
     public void setDistance(Integer distance) {
         this.distance = distance;
+    }
+
+    public PodiumEntity getPodium() {
+        return podium;
+    }
+
+    public void setPodium(PodiumEntity podium) {
+        this.podium = podium;
     }
 }

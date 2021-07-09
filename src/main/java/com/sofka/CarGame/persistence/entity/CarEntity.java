@@ -9,11 +9,21 @@ public class CarEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCar;
+
     private Integer model;
+
     private String color;
+
     private String brand;
+
     private Integer idDriver;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idDriver", referencedColumnName = "idDriver")
+    private DriverEntity driver;
+
+    @OneToOne(mappedBy = "car")
+    private LaneEntity lane;
 
     public Integer getIdCar() {
         return idCar;
@@ -53,5 +63,21 @@ public class CarEntity {
 
     public void setIdDriver(Integer idDriver) {
         this.idDriver = idDriver;
+    }
+
+    public DriverEntity getDriver() {
+        return driver;
+    }
+
+    public void setDriver(DriverEntity driver) {
+        this.driver = driver;
+    }
+
+    public LaneEntity getLane() {
+        return lane;
+    }
+
+    public void setLane(LaneEntity lane) {
+        this.lane = lane;
     }
 }

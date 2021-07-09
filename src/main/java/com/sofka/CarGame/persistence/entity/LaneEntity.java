@@ -12,6 +12,17 @@ public class LaneEntity {
     
     private Integer idCar;
 
+    private Integer idTrack;
+
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idCar", referencedColumnName = "idCar")
+    private CarEntity car;
+
+    @ManyToOne //Muchos carriles le pueden pertenecer a una pista.
+    @JoinColumn(name = "idTrack", insertable = false, updatable = false)
+    private  TrackEntity track;
+
     public Integer getIdLane() {
         return idLane;
     }
@@ -20,12 +31,35 @@ public class LaneEntity {
         this.idLane = idLane;
     }
 
-
     public Integer getIdCar() {
         return idCar;
     }
 
     public void setIdCar(Integer idCar) {
         this.idCar = idCar;
+    }
+
+    public CarEntity getCar() {
+        return car;
+    }
+
+    public void setCar(CarEntity car) {
+        this.car = car;
+    }
+
+    public Integer getIdTrack() {
+        return idTrack;
+    }
+
+    public void setIdTrack(Integer idTrack) {
+        this.idTrack = idTrack;
+    }
+
+    public TrackEntity getTrack() {
+        return track;
+    }
+
+    public void setTrack(TrackEntity track) {
+        this.track = track;
     }
 }
