@@ -7,6 +7,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring")
 public interface DriverMapper {
 
@@ -14,7 +16,7 @@ public interface DriverMapper {
             @Mapping(source = "nameDriver", target = "name")
     })
     Driver toDriver(DriverEntity driver);
-
+    List<Driver> toDrivers(List<DriverEntity> drivers);
 
     @InheritInverseConfiguration
     @Mapping(target = "car", ignore = true)
