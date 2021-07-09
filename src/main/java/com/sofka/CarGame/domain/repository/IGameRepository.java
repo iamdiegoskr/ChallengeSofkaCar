@@ -5,7 +5,7 @@ import com.sofka.CarGame.domain.model.Game;
 import java.util.List;
 import java.util.Optional;
 
-public interface GameRepository {
+public interface IGameRepository {
 
     List<Game> getAll();
     Optional<Game> getGameById(int id);
