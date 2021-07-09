@@ -1,5 +1,7 @@
 package com.sofka.CarGame.domain.model;
 
+import java.util.Random;
+
 public class Driver {
     private int idDriver;
     private String name;
@@ -18,5 +20,10 @@ public class Driver {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int throwDice(){
+        Random random = new Random();
+        return (random.nextInt(6) + 1);
     }
 }

@@ -17,7 +17,7 @@ public interface CarMapper {
         @Mapping(source = "model",target = "modelYear")
     })
     Car toCar(CarEntity car);
-    List<Car> toCars(List<Car> cars);
+    List<Car> toCars(List<CarEntity> cars);
 
     @InheritInverseConfiguration
     @Mapping(target = "lane", ignore = true)
